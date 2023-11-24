@@ -1,0 +1,180 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+
+}
+body{
+    display: flex; <!-- وضعناها هنا حتى تطبق على كل العناصر -->
+    background-color: #001;
+}
+
+.img-box{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px white solid;
+    margin: 10px;
+
+}
+/*
+عندما جعلنا الصندوق ريديوس ولكن الصورة لم تتحول لدائرة
+  وذلك بسبب أن الصورة خرجت من حدود الصندوق
+  والحل يكون بإضافة overflow:hidden في العنصر الأب
+  كما هو في الأعلى
+ */
+.img-box img{
+    width: 100%;
+    height: 100%;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.profile h2{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+
+.menu{
+    background-color: #123;
+    width: 260px;
+    height: 100vh; <!-- 100% from the screen -->
+    padding: 20px;
+}
+ul{
+    list-style: none;
+    position: relative;
+    height: 95%;
+}
+
+ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;  <!-- to make the text and icon in the same line  -->
+    align-items: center;
+    gap: 40px; <!-- to make space between icons and text -->
+    transition: .5s; <!-- to make a delay 0.5sec -->
+}
+ul li a:hover, .active, .data-info .box, td:hover{
+    background-color: #ffffff55;
+}
+/*
+to make the first item in dashboard by default other color
+so we have to give <a class name in index
+after that add it .class name in hover like above ul li a:hover, .active{
+ */
+/*
+سوف نعمل على تنزيل عنصر الخروج إلى الأسفل
+سوف نحدد موقعه على اساس أنه Absolute
+ولكن حتى تعمل هذه الخاصية فلابد من إضافة تحديد الموقع للعنصر الأب ul على أنه Relative
+وكذلك لابد من تحديد طول القائمة في العنصر الأب
+ */
+.logout{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.logout a{
+    background-color: red;
+}
+
+ul li a i{
+    font-size: 30px;
+}
+
+.conten{
+    width: 100%;
+    background-color: #000011;
+}
+
+.title-info{
+    background-color: #0481ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; <!-- sheft the icone and make a space between -->
+
+}
+
+.data-info{
+    /*
+    أول شي نريد العناصر تكون بجنب بعض
+    فنضع display flex
+     */
+    display: flex;
+    /*
+    حتى يأتوا بجنب بعض ولكن بالتساوي
+     */
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; <!--  نعجل خاصية النزول الأوتوماتيكي في حالة عدم وجود مساحة كافية -->
+    gap: 10px;
+
+}
+
+.data-info .box{
+    background-color: #123;
+    height: 150px;
+    margin: 5px;
+   //width: 100px;  <!--  we will not used because we allredy using flex that is why we will use anther option -->
+    flex-basis: 150px;
+    flex-grow: 1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.data-info .box i{
+    font-size: 40px;
+}
+
+.data-info .box .data{
+    text-align: center;
+}
+.data-info .box .data span{
+    color: #f39c12;
+    font-size: 30px;
+}
+
+
+table{
+    width: 100%;
+    text-align: center;
+    border-spacing: 8px; <!-- تتحكم في العناصر التي في الجدول -->
+}
+
+th, td{
+    background-color: #123;
+    height: 40px;
+    border-radius: 8px;
+}
+th{
+    background-color: orange;
+
+}
+
+.price, .count{
+    padding: 6px;
+    border-radius: 6px;
+}
+.price{
+    background-color: #0a3622;
+}
+.count{
+    background-color: gold;
+    color: black;
+}
